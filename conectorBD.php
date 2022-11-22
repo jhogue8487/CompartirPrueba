@@ -21,6 +21,12 @@ class ConectorBd {
         }
         return $conexion;
     }
+    //no devuelve nada
+    public function consultaRetorno($cadenaSql){
+        $datos = $this->conectar()->query($cadenaSql);
+        $filas = $datos->fetch_assoc();
+        return $filas;    
+    }
     
     
 }
